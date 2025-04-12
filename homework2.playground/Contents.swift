@@ -176,6 +176,250 @@ for i in 0...200 {
     }
 }
 
+//задачи
+//1
+import Foundation
+/*
+var N = Double(readLine() ?? "") ?? 0
+var square = sqrt(N)
+for i in 1...Int(square) {
+        print(i * i)
+    }
+*/
+//2
+/*print("Enter A: ")
+var A = Double(readLine() ?? "") ?? 0
+print("Enter B: ")
+var B = Double(readLine() ?? "") ?? 0
+let (min, max) = A <= B ? (A, B) : (B, A)
+for i in Int(ceil(min))...Int(floor(max)) {
+    print(i * i * i)
+}*/
+
+//3
+/*print("Enter n: ")
+var n = Double(readLine() ?? "") ?? 0
+print("Enter d: ")
+var d = Double(readLine() ?? "") ?? 0
+if floor(d) != d {
+    print ("d must be int")
+ exit(1)
+}
+var result = n
+switch d {
+case 2...:
+    for i in 2...Int(d) {
+        result *= n
+    }
+case 0 :
+    result = 1
+case ..<0:
+    for i in Int(d)...0 {
+        result *= 1 / n
+    }
+default:
+    result = n
+}*/
+
+//4
+for i in stride(from: -5, through: 5, by: 0.5) {
+    print("\(i): y = 5 - x^2 / 2 = \(5 - i * i / 2)")
+}
+
+//5
+/*for i in 20...30 {
+    var number = i
+    while number != 1 {
+        number % 2 == 0 ? number / 2 : (number * 3 + 1) / 2
+    }
+}*/
+
+//6
+print("enter the number: ")
+let input = readLine() ?? ""
+if let number = Int(input) {
+    let numberStr = String(abs(number))
+    for char in numberStr {
+            print(char)
+    }
+} else {
+    print("not an integer")
+}
+
+//7
+/*print("enter natural number: ")
+var sum = 0
+let n = readLine() ?? ""
+if let nToInt = Int(n), nToInt > 0 {
+    for digit in String(nToInt) {
+        if let d = Int(String(digit)), d % 2 == 0 {
+            sum += d
+        }
+    }
+} else {
+    print("couldn't find sum of even digits")
+}*/
+
+//8
+/*print("enter number: ")
+var even = 0
+var uneven = 0
+let n = readLine() ?? ""
+if let nToInt = Int(n) {
+    for digit in String(abs(nToInt)) {
+        if let d = Int(String(digit)), d % 2 == 0 {
+            even += 1
+        } else {
+            uneven += 1
+        }
+    }
+} else {
+    print("entered string is not a number")
+}*/
+
+//9
+/*print("enter integer number: ")
+var max = 0
+let n = readLine() ?? ""
+if let nToInt = Int(n) {
+    for digit in String(abs(nToInt)) {
+         if let d = Int(String(digit)) {
+             if max < d {
+                 max = d
+             }
+         }
+    }
+}*/
+
+//10
+/*print ("enter the number: ")
+let n = readLine() ?? ""
+if var nToInt = Int(n) {
+    var a = 0
+    var m = 0
+    while nToInt != 0 {
+        a = nToInt % 10
+        m = m * 10 + a
+        nToInt /= 10
+    }
+    print(m)
+} else {
+    print("couldn't reverse the number")
+}*/
+
+//11
+/*print("enter the number: ")
+var num = readLine() ?? ""
+print("enter a digit to delete: ")
+var dig = readLine() ?? ""
+if var n = Int(num), var d = Int(dig) {
+    var m = 0
+    var mult = 10
+    while n != 0 {
+        var a = n % 10
+        if a != d {
+            m = a * mult + m
+            mult *= 10
+        }
+        n /= 10
+    }
+    print(m)
+} else {
+    print("couldn't delete the digit")
+}*/
+
+//12
+/*for num in 1...10000 {
+    var sum = 0
+    for div in 1..<num {
+        if num % div == 0 {
+            sum += div
+        }
+    }
+    if num == sum {
+        print(num)
+    }
+}*/
+
+//13
+let pa = 10
+let pb = 5
+let pc = 2
+let qty = 30
+let sum = 100
+for a in 0...qty {
+    for b in 0...(qty - a) {
+        let c = qty - a - b
+        if pa * a + pb * b + pc * c == sum {
+            print("pens: \(a), pencils: \(b), erasers: \(c)")
+        }
+    }
+}
+
+//14
+while true {
+    print("enter first number: ")
+    guard let xStr = readLine(), let x = Double(xStr) else {
+        print("invalid first number")
+        continue
+    }
+    print("Enter the operator or 0 to exit: ")
+    let op = readLine() ?? ""
+    if op == "0" {
+        break
+    }
+    print("enter second number: ")
+    guard let yStr = readLine(), let y = Double(yStr) else {
+        print("invalid second number")
+        continue
+    }
+
+    var z: Double?
+
+    switch op {
+    case "+":
+        z = x + y
+    case "-":
+        z = x - y
+    case "*":
+        z = x * y
+    case "/":
+        if y != 0 {
+            z = x / y
+        } else {
+            print("division by 0")
+        }
+    default:
+        print("invalid operator")
+    }
+    if let result = z {
+        print("\(x) \(op) \(y) = \(result)\n")
+    } else {
+        print("No result")
+    }
+}
+
+//15
+let num = Int.random(in: 1...50)
+print("Guess the number in the 1...50 range:")
+while true {
+    if let input = readLine(), let guess = Int(input) {
+        if guess == num {
+            print("correct number!")
+            break
+        } else {
+            print("try again")
+        }
+    } else {
+        print("enter a number")
+    }
+}
+
+
+
+
+
+
 
 
 
