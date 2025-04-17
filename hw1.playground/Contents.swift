@@ -52,20 +52,18 @@ var operation = String(readLine() ?? "")
 print("enter second number: ")
 var secondNumber = Double(readLine() ?? "") ?? 0
 var result: Double?
-if operation == "+" {
+
+switch operation {
+case "+":
     result = firstNumber + secondNumber
-} else if operation == "-" {
+case "-":
     result = firstNumber - secondNumber
-} else if operation == "*" {
+case "*":
     result = firstNumber * secondNumber
-} else if operation == "/" {
-    if secondNumber != 0 {
-        result = firstNumber / secondNumber
-    } else {
-        print("second number cannot be 0")
-    }
-} else {
-    print("wrong operator")
+case "/" where secondNumber != 0:
+    result = firstNumber / secondNumber
+default:
+    print("wrong oparetor or division by 0")
 }
 
 if let result = result {
